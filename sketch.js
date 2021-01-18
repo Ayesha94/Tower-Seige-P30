@@ -72,7 +72,8 @@ function draw()
     background(0);
     fill("yellow")
     textSize(20)
-    text("Drag the Hexagonal Stone and release it, launch it towards the blocks", 100, 50)
+    text("Drag the Hexagonal Stone and release it, launch it towards the blocks", 250, 40)
+    text("Press Space to attach the polygon back", 380, 70)
     Engine.update(engine);
     //-----------
     imageMode(CENTER);
@@ -133,4 +134,11 @@ function mouseDragged()
 function mouseReleased()
 {
     slingshot.fly();
+}
+function keyPressed()
+{
+    if(keyCode===32)
+    {
+        slingshot.attach(this.polygon)
+    }
 }
